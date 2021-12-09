@@ -23,10 +23,11 @@ jobs:
             - name: Set the value
               id: step_one
               run: |
-                   echo "hi"
+                   run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
                    
             - name: Use the value
               id: step_two
               run: |
-                   echo "bye"
+                    echo $RELEASE_VERSION
+                    echo ${{ env.RELEASE_VERSION }}
                   
