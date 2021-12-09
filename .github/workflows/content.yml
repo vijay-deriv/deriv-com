@@ -12,19 +12,16 @@ jobs:
         environment: production
         
         steps:
-           
-            - name: Checkout 🛎️
+             
+            - name: Checkout
               uses: actions/checkout@v2.3.1
-              with:
-                 ref: p*
-        
+              
             - name: Set the value
               id: step_one
               run: |
-                   a=`echo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"`
-                   echo $a
-                   git -c 'versionsort.suffix=-' ls-remote --exit-code --refs --tags https://github.com/vijay-deriv/deriv-com
+                   echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+                   
             - name: Use the value
               id: step_two
               run: |
-                   echo "$GIT_TAG_NAME"
+                  
