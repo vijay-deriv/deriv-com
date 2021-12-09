@@ -19,7 +19,7 @@ jobs:
             - name: Set the value
               id: step_one
               run: |
-                   git tag -l -n production*
+                   git tag -l
                    
             - name: Use the value
               id: step_two
