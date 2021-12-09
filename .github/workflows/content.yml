@@ -16,12 +16,17 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2.3.1
               
+            - name: Clone latest tag
+              with:
+                ref: production_V20211123_0
+              
             - name: Set the value
               id: step_one
               run: |
-                   git tag -l
+                   echo "hi"
                    
             - name: Use the value
               id: step_two
               run: |
+                   echo "bye"
                   
