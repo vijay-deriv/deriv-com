@@ -19,7 +19,7 @@ jobs:
             - name: Set the value
               id: step_one
               run: |
-                   echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+                   git tag -l -n production*
                    
             - name: Use the value
               id: step_two
