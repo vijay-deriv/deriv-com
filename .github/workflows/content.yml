@@ -21,7 +21,7 @@ jobs:
                    git tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=creatordate | grep production | awk '{ print $2; }' | tail -1 > output.txt
                    GIT_TAG_NAME=$(cat output.txt)
                    
-                   echo "git tag is ${GIT_TAG_NAME}
+                   echo "git tag is ${GIT_TAG_NAME}"
                    
             - name: Clone latest tag
               uses: actions/checkout@v2.3.1
