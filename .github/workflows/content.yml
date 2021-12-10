@@ -33,7 +33,7 @@ jobs:
        
             - name: Set the value
               run: |
-                   echo "{$GIT_TAG_NAME}"
+                   echo "${GIT_TAG_NAME}"
                    
                    
                              
