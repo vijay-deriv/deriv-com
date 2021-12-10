@@ -42,6 +42,10 @@ jobs:
             - name: Set the value
               run: |
                    echo "hi hello tata ${{ steps.get_tag_name.outputs.VERSION }} "
+               
+            - name: Building docker image 🐳
+              run: docker image ls deriv-com:${{ steps.get_tag_name.outputs.VERSION }}
+
                    
                    
                              
